@@ -124,8 +124,8 @@ public class EncryptUtils {
     
     public static void main(String[] args) {
         System.out.println("82BEF3CF96615723F0E712FD575E6B0A739DEEEDE7EEE182E373CD9B2EEB91CBC2C10447E7BE4364F54C4EFEFF47BC59".length());
-        String content = "boyanmima1233445123123123123123123123123123";  
-        String password = "boyanduocai";  
+        String content = "boyanmima123";  
+        String password = "beyondsoft";  
         // 加密  
         System.out.println("加密前：" + content);  
         byte[] encryptResult = encryptAES(content, password);  
@@ -134,7 +134,7 @@ public class EncryptUtils {
         // 解密  
         byte[] decryptResult = decryptAES(encryptResult,password);  
         System.out.println("解密后：" + new String(decryptResult));  
-        byte[] decryptFrom = parseHexStr2Byte(encryptResultStr);  
+        byte[] decryptFrom = parseHexStr2Byte("aabbccddddccbbaaaabbccddddccbbaa");  
         byte[] decryptResult1 = decryptAES(decryptFrom,password);  
         System.out.println("解密后：" + new String(decryptResult1));  
     }
