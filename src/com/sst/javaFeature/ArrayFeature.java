@@ -1,6 +1,7 @@
 package com.sst.javaFeature;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -73,8 +74,18 @@ public class ArrayFeature {
 		for (int i = 0; i < studentArray.length; i++) {
 			studentList.add( new Student(i,"学生" + i));
 		}
-		System.out.println(studentArray);
-		System.out.println(studentList);
+		System.out.println(studentArray);//输出不正确，因为使出的是array类的toString()方法
+		System.out.println(studentList);//正常,AbstractCollection父类重写了toString方法
+		System.out.println(Arrays.toString(studentArray));//正常，Arrays重写了toString方法
+		
+		List<Student> studnetList1 = new ArrayList<Student>(Arrays.asList(studentArray));
+		studnetList1.add(new Student(5, "学生5"));
+		System.out.println("studnetList1:" + studnetList1);
+		
+		List<Student> asList = Arrays.asList(studentArray);//这个是arrays中的内部类，不是那个arrayList
+		asList.add(new Student(5, "学生5"));
+		System.out.println(asList);//运行报错，不允许添加元素，内部是一个数组
+		
+		
 	}
-
 }
