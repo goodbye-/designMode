@@ -84,7 +84,7 @@ public class ArrayFeature {
 		
 		List<Student> asList = Arrays.asList(studentArray);//这个是arrays中的内部类，不是那个arrayList
 		asList.add(new Student(5, "学生5"));
-		System.out.println(asList);//运行报错，不允许添加元素，内部是一个数组
+		System.out.println(asList);//运行报错，不允许添加元素，内部是一个数组，没有实现add(E)方法，默认的父类abstract类的默认实现是抛出不支持操作的异常
 		
 		
 	}
