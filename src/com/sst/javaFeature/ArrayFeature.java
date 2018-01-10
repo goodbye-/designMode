@@ -2,6 +2,7 @@ package com.sst.javaFeature;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 class Student implements Comparable<Student>{
@@ -134,7 +135,7 @@ public class ArrayFeature {
         int[] intArray = { 1, 23, 4, 5, 6, };
         int[] intArray2 = new int[] { 1, 23, 4, 56, 7, 8, 9 };
         intArray = intArray2;// 输出结果是intArray2
-        System.out.println(Arrays.toString(intArray) + Arrays.toString(intArray2));
+        System.out.println(Arrays.toString(intArray) + Arrays.toString(intArray2));//之后如果intArray变了，2也跟着变
         int[][] multiArray = { { 1, 2 }, { 1, 2, 3 }, { 1, 2, 3, 4, } };// 这个被成为粗糙数组
         System.out.println(Arrays.toString(multiArray));// 输出结果：[[I@4e25154f,
                                                         // [I@70dea4e,
@@ -190,7 +191,14 @@ public class ArrayFeature {
         //System.arraycopy(src, srcPos, dest, destPos, length);
         Arrays.equals(studentArray,null) ;
         
-        Arrays.sort(studentArray);
-        System.out.println(Arrays.toString(studentArray));
+        Arrays.sort(intArray2);
+        System.out.println(Arrays.toString(intArray2));
+        Arrays.sort(doubles, Collections.reverseOrder());//Comparator的作用就在于如果给你一个comparable的对象，你可以改写它的排序方法，自己写一个实现类，重写comparaTo方法即可，基本类型数组不可以使用这种方式
+        System.out.println(Arrays.toString(doubles));
+        //前提是数组已经排好序了
+        Arrays.sort(doubles);
+        System.out.println(Arrays.binarySearch(doubles, 2.2));//这个是有第三个参数comparator的，因为比如对字符串排序，你之前的顺序是caseInsense的，那么如果不传，对于默认的排序自然排序是错误的，会引发不可预知的事情，所以要保持排序的一致
+        System.out.println(Arrays.toString(doubles));
     }
 }
+
