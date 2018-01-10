@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Student {
+class Student implements Comparable<Student>{
     private Integer id;
     private String name;
 
@@ -65,6 +65,11 @@ class Student {
         this.id = id;
         this.name = name;
     }
+
+    @Override
+    public int compareTo(Student o) {
+        return id - o.getId();
+    }
 }
 
 class Teacher<T> {
@@ -99,6 +104,7 @@ class MethodParameter {
 public class ArrayFeature {
     @SuppressWarnings({ "unused", "unchecked", "rawtypes" })
     public static void main(String[] args) {
+        System.out.println(ArrayFeature.class.getPackage().getName());
         Student[] studentArray = new Student[5];
         for (int i = 0; i < studentArray.length; i++) {
             studentArray[i] = new Student(i, "学生" + i);
@@ -183,5 +189,8 @@ public class ArrayFeature {
         
         //System.arraycopy(src, srcPos, dest, destPos, length);
         Arrays.equals(studentArray,null) ;
+        
+        Arrays.sort(studentArray);
+        System.out.println(Arrays.toString(studentArray));
     }
 }
