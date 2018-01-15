@@ -1,4 +1,4 @@
-package com.sst.javaFeature;
+package com.sst.javaFeature.Enum;
 
 /**
  * @author shui 实例通过一个标识来获取枚举的实例,而不是通过遍历对比

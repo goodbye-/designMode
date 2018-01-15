@@ -1,4 +1,4 @@
-package com.sst.javaFeature;
+package com.sst.javaFeature.Enum;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.sst.javaFeature;
+package com.sst.javaFeature.Enum;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class Constant {
     /**
      * 枚举接口类全路径
      */
-    public final static String ENUM_MESSAGE_PATH = "com.sst.javaFeature.EnumMessage";
+    public final static String ENUM_MESSAGE_PATH = "com.sst.javaFeature.Enum.EnumMessage";
 
     /**
      * 枚举类对应的全路径集合
@@ -33,7 +33,7 @@ public class Constant {
 
     private static List<String> initPackagePathList() {
         List<String> list = new ArrayList<>();
-        list.add("com.sst.javaFeature");
+        list.add("com.sst.javaFeature.Enum");
         return list;
     }
 
