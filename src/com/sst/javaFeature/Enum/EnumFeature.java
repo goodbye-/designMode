@@ -1,5 +1,7 @@
 package com.sst.javaFeature.Enum;
 
+import java.util.HashMap;
+
 /**
  * @author shui 实例通过一个标识来获取枚举的实例,而不是通过遍历对比
  */
@@ -67,5 +69,13 @@ public class EnumFeature {
         System.out.println(male);
         //SexEnum zEnum = new SexEnum("aaa","aaa");//不能初始化
         System.out.println(EnumUtil.getEnumObject("女", SexEnum.class));//MAN
+        
+        
+        HashMap<String, Object> map = new HashMap<String,Object>();
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        map.put("4", 4);
+        map.put("5", 5);
     }
 }
