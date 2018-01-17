@@ -1,0 +1,31 @@
+1: package com.sst.javaFeature.file;
+2: 
+3: import java.io.*;
+4: 
+5: public class BufferedInputFile {
+6:     // Throw exceptions to console:
+7:     /** 
+8:     * @author : sst HJ
+9:     * @date 创建时间：2018年1月16日 下午5:08:26 
+10:     * @version 1.0 
+11:     * @param filename
+12:     * @return
+13:     * @throws IOException 
+14:     * @since   
+15:     * @方法说明：如果换成inputStream的字节流，居然不知道怎么用!!
+16:     */
+17:     public static String read(String filename) throws IOException {
+18:         // Reading input by lines:
+19:         BufferedReader in = new BufferedReader(new FileReader(filename));
+20:         String s;
+21:         StringBuilder sb = new StringBuilder();
+22:         while ((s = in.readLine()) != null)
+23:             sb.append(s + "\n");
+24:         in.close();
+25:         return sb.toString();
+26:     }
+27: 
+28:     public static void main(String[] args) throws IOException {
+29:         System.out.print(read("./src/com/sst/javaFeature/file/BufferedInputFile.java"));
+30:     }
+31: } /* (Execute to see output) */// :~
