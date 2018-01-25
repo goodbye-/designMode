@@ -1,6 +1,7 @@
 package com.sst.javaFeature.file;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
 
 public class PPrint {
     public static String pformat(Collection<?> c) {
