@@ -1,17 +1,24 @@
 package com.sst.javaFeature.Enum;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 
 /**
  * @author shui 实例通过一个标识来获取枚举的实例,而不是通过遍历对比
+	父类Enum中有final类型的name字段和final类型的name()方法，所以添加name字段是不会有什么影响的
  */
 
 enum SexEnum implements EnumMessage{
-    MAN("M", "男"), WOMAN("F", "女");
+    MAN("M", "男"), WOMAN("F", "女");//后加；，且必须在最前边
 
     private String code;
     private String desc;
 
+    /**
+		tij中说构造方法必须是package或者private
+     * @param code
+     * @param desc
+     */
     SexEnum(String code, String desc) {
         this.code = code;
         this.desc = desc;
@@ -65,6 +72,9 @@ enum SexEnum implements EnumMessage{
 
 public class EnumFeature {
     public static void main(String[] args) {
+    	for(SexEnum sexEnum : SexEnum.values()){
+    		System.out.println(sexEnum + " ===" + sexEnum.name());
+    	}
         SexEnum male = SexEnum.getSexEnumByCode("M");
         System.out.println(male);
         //SexEnum zEnum = new SexEnum("aaa","aaa");//不能初始化
