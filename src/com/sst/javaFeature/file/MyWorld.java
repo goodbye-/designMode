@@ -30,6 +30,7 @@ class House implements Externalizable {
     } 
 }
 
+@SuppressWarnings("serial")
 class Animal implements Serializable {
     private String name;
     private House preferredHouse;
