@@ -8,6 +8,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/**
+ * @author shui
+ *  get方法会阻塞
+ *  exec.shutdown();不能网鞋，否则main方法都不会停止
+ *
+ */
 class TaskWithResult implements Callable<String> {
     private int id;
 
@@ -15,7 +21,9 @@ class TaskWithResult implements Callable<String> {
         this.id = id;
     }
 
-    public String call() {
+    public String call() throws InterruptedException {
+        System.out.println(Thread.currentThread().getName());
+        Thread.sleep(2*1000);
         return "result of TaskWithResult " + id;
     }
 }
@@ -29,6 +37,7 @@ public class CallableDemo {
         for (Future<String> fs : results)
             try {
                 // get() blocks until completion:
+                System.out.println(fs.isDone());
                 System.out.println(fs.get());
             } catch (InterruptedException e) {
                 System.out.println(e);
