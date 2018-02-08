@@ -12,7 +12,8 @@ public class EvenGenerator extends IntGenerator {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        ++currentEvenValue;
+        ++currentEvenValue;//即使递增操作也不是原子操作，但是如果不加sleep方法，两个对成员变量i操作的++操作，
+                           //居然运行了好几次都没有看到奇数的产生
         return currentEvenValue;
     }
 
