@@ -7,6 +7,11 @@ public class EvenGenerator extends IntGenerator {
 
     public int next() {
         ++currentEvenValue; // Danger point here!
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ++currentEvenValue;
         return currentEvenValue;
     }

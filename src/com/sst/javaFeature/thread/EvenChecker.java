@@ -14,10 +14,12 @@ public class EvenChecker implements Runnable {
     }
 
     public void run() {
+        System.out.println(Thread.currentThread().getName() + "====" + generator.isCanceled() + " === " + generator.next());
         while (!generator.isCanceled()) {
             int val = generator.next();
+            System.out.println(Thread.currentThread().getName() + "====" +val);
             if (val % 2 != 0) {
-                System.out.println(val + " not even!");
+                System.out.println(Thread.currentThread().getName() + "====" + val + " not even!");
                 generator.cancel(); // Cancels all EvenCheckers
             }
         }
