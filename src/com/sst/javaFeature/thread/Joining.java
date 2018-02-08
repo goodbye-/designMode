@@ -1,5 +1,10 @@
 package com.sst.javaFeature.thread;
 
+/**
+ * @author shui
+ *  捕获异常时，将清除interrupted标志，所以程序中返回的总是false
+ *
+ */
 class Sleeper extends Thread {
     private int duration;
 
@@ -13,7 +18,7 @@ class Sleeper extends Thread {
         try {
             sleep(duration);
         } catch (InterruptedException e) {
-            System.out.println(getName() + e.getMessage());
+            System.out.println(getName() + "===" + e.getMessage());
             System.out.println(getName() + " was interrupted. " + "isInterrupted(): " + isInterrupted());
             return;
         }
