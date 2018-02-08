@@ -1,4 +1,4 @@
-//: annotations/database/TableCreationProcessorFactory.java
+/*//: annotations/database/TableCreationProcessorFactory.java
 // The database example using Visitor.
 // {Exec: apt -factory
 // annotations.database.TableCreationProcessorFactory
@@ -98,3 +98,4 @@ public class TableCreationProcessorFactory
     }
   }
 } ///:~
+*/
