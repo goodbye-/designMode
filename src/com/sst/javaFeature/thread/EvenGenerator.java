@@ -2,10 +2,16 @@
 // When threads collide.
 package com.sst.javaFeature.thread;
 
+/**
+ * @author shui
+ * 对于同一个对象来说，所有的synchronized方法共享一个对象锁，在执行f的时候，所有的其他线程都必须等f结束后才可以执行g--fg都在了synchronized关键字
+ * 对于每一个类来说，也有一个锁(class对象的锁)，synchronized static可以防止类范围内对static数据的并发访问
+ *
+ */
 public class EvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
 
-    public int next() {
+    public synchronized int next() {
         ++currentEvenValue; // Danger point here!
         try {
             Thread.sleep(1000);

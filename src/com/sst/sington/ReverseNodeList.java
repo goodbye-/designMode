@@ -60,7 +60,6 @@ public class ReverseNodeList {
     }
 
     public static Node toHead(Node source, int val) {
-
         Node temp = source;
         Node pp = temp;
         while (temp != null) {
@@ -75,7 +74,6 @@ public class ReverseNodeList {
             pp = temp;
             temp = temp.next;
         }
-
         return temp;
     }
     

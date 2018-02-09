@@ -8,7 +8,7 @@ public class SynchronizedEvenGenerator extends IntGenerator {
 
     public synchronized int next() {
         ++currentEvenValue;
-        Thread.yield(); // Cause failure faster
+        //Thread.yield(); // Cause failure faster
         ++currentEvenValue;
         return currentEvenValue;
     }
