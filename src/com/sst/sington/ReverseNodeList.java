@@ -69,7 +69,7 @@ class Node implements Cloneable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see java.lang.Object#toString() 原先的头String直接用node会破坏结构，所以clone了一个
+	 * @see java.lang.Object#toString() 原先的头String直接用node会破坏结构，所以clone了一个,或者定义一个temp指向都节点也行
 	 */
 	@Override
 	public String toString() {
