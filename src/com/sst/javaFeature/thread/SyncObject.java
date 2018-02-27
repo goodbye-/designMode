@@ -29,6 +29,11 @@ public class SyncObject {
 			}
 		}.start();
 		ds.g();
+		
+		
+		String aString = (new String("111") + new String("222")).intern();
+		String bString = new String("111222").intern();
+		System.out.println(aString == bString);
 	}
 } /*
 	 * Output: (Sample) g() f() g() f() g() f() g() f() g() f()
